@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button:hover{
+            background-color:grey;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div style="padding:25px ;">
+    <input id="myInput" type="text" placeholder="enter text">&nbsp;<button id="myButton"  type="submit">submit</button>
+</div>
+<p style="margin-left:25px ;" id="entered"></p>
+   
+
+</body>
+<script>
+   let button=document.querySelector("#myButton")
+
+     button.addEventListener("click",function(){
+        document.getElementById("entered").innerText="Entered value: "+document.getElementById("myInput").value
+        alert(document.getElementById("myInput").value)
+        if(document.getElementById("myInput").value==""){
+            document.getElementById("entered").innerText=""
+        }
+        
+     })   
+     
+
+    
+</script>
+</html>
