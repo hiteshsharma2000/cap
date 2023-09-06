@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .keypad{
+        display: grid;
+        grid-template-columns: repeat(3,45px);
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }.operator{
+        
+        display: grid;
+        grid-template-columns: repeat(3,45px);
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+     }#equal{
+        margin-left: 40%;
+        height: 30px;
+        width: 100px;
+    } 
+</style>
+<body>
+    <br><br>
+    <!-- <input id="display" type="text" style="height:30px;width:20%;margin-left: 30%;"> -->
+    <h1 id="display"></h1>
+    <!-- <br><br> -->
+    <div class="keypad" >
+        <button>0</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+    </div>
+    <br>
+    <div class="operator" >
+        <button>+</button>
+        <button>-</button>
+        <button>*</button>
+        <button>/</button>
+        <button id="ac">AC</button>
+    </div>
+    <br>
+    <br><button id="equal"  >=</button>
+   
+</body>
+<script>
+let keypadbutton=document.querySelectorAll(".keypad > button");
+let operatorbutton=document.querySelectorAll(".operator> button");
+let heading=document.getElementById("display");
+let results=document.getElementById("equal");
+
+//let take numbers
+
+let firstNumber = "";
+let secondNumber = "";
+
+let IsFirstNumber = true;
+let operators = "";
+
+
+let AC=document.getElementById("ac");
+
+
+
+
+for(let i=0;i<keypadbutton.length;i++){
+    keypadbutton[i].addEventListener("click",function(){
+        if(IsFirstNumber == true){
+            firstNumber+= keypadbutton[i].innerText;
+            heading.innerText = firstNumber ;   }
+        else{
+            secondNumber+= keypadbutton[i].innerText;
+            heading.innerText=secondNumber;
+        }
+        
+    })
+}
+
+ for(let i=0;i<operatorbutton.length;i++){
+    operatorbutton[i].addEventListener("click",function()
+        {
+           IsFirstNumber = false;
+           operators = operatorbutton[i].innerText
+          
+            
+        })
+ }
+
+ function calculate(firstNumber,secondNumber,operators){
+
+    switch(operators){
+        case"+":
+        return Number(firstNumber)+ Number(secondNumber);
+        case"-":
+        return Number(firstNumber)- Number(secondNumber);
+        case"*":
+        return Number(firstNumber)*Number(secondNumber);
+        case"/":
+        return Number(firstNumber)/ Number(secondNumber);
+    }
+ }
+ results.addEventListener("click",function(){
+    heading.innerText=calculate(firstNumber,secondNumber,operators)
+ })
+ AC.addEventListener("click",function(){
+ firstNumber = "";
+ secondNumber = "";
+ heading.innerText="";
+  IsFirstNumber = true;
+  operators = "";
+})
+ 
+
+</script>
+</html>

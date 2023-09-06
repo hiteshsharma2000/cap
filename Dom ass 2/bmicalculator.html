@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            margin: auto;
+           
+            justify-content: center;
+        }
+       #sub:hover{
+        background-color:rgb(240, 162, 17);
+        height: 30px;
+        width: 60px;
+        border-radius: 5px;
+        transition: 0.2s;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        border-style: groove;
+        
+        
+    }
+        #inp:hover{
+           
+            height: 28px;
+            width: 200px;
+            transition: 0.2s;
+            opacity: 60%;
+        }
+        #inp2:hover{
+           
+           height: 28px;
+           width: 200px;
+           transition: 0.2s;}
+    </style>
+</head>
+<body><br>
+    <div id="main" style="padding-left:30% ;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+        <h1 id="head">CHECK YOUR BMI</h1>
+        <br>
+        <h3 class="para">Enter your weight and height to check your BMI  result</h3>
+        <br>
+        <h3 class="para">put your weight in here (KG)</h3>
+        <br>
+        <input type="number" id="inp" placeholder="enter weight in KG">
+        <br>
+        <h3 class="para">put your height in here (CM)</h3>
+        <br>
+        <input type="number" id="inp2" placeholder="enter height in CM">
+        <br><br>
+        
+        <br>
+        <input type="submit"  id="sub">
+        <h3 id="show"></h3>
+    </div>
+</body>
+<script>
+    let input1=document.getElementById("inp")
+    let input2=document.getElementById("inp2")
+     let result=document.getElementById("sub")
+    let showing=document.getElementById("show")
+    result.addEventListener("click",function(){
+        
+        let heig=Number(input2.value*0.01)
+        let wei=Number(input1.value)
+        
+        showing.innerText="YOUR BMI is "+(wei)/(heig*heig)+" which means you are obese"
+        if(input1.value=="" || input2.value==""){
+            showing.innerText="Enter all the data for get BMI result"
+
+        }
+        
+
+
+    }) 
+
+</script>
+</html>
