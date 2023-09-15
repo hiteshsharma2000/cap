@@ -11,7 +11,7 @@ function bank(accountnum,name,type,balance,isactive){
     }
     this.withdraw=function(amt){
         if(this.balance>amt){
-            this.withdraw-=Number(amt);
+            this.balance -=Number(amt);
             console.log(`withdraw succesfull and you balance is ${this.balance}`)
         }else{
             console.log(`insufficient balance`)
@@ -38,8 +38,17 @@ let myform=document.querySelector("form");
 myform.addEventListener("submit",function(e){
     e.preventDefault();
     let account1= new bank(no.value,nam.value,typ.value,bal.value,true);
-
-    console.log(account1.balance)
-    account1.deposit(22)
+let amount=document.getElementById("depo").value;
+let amount2=document.getElementById("with").value;
+if(amount=="" && amount2==""){
+    console.log(`your balance is ${account1.balance}`)
+}
+    if(amount!=""){
+    account1.deposit(amount)
+    }
+    if(amount2!=""){
+        account1.withdraw(amount2)
+    }
+   
 })
 
