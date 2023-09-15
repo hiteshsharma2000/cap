@@ -2,16 +2,16 @@ function bank(accountnum,name,type,balance,isactive){
     this.accountnum=accountnum;
     this.name=name;
     this.type= type;
-    this.balance=balance;
+    this.balance=Number(balance);
     this.isactive=isactive;
 
     this.deposit=function(amt){
-        this.balance+=amt;
+        this.balance+=Number(amt);
         console.log(`deposit succesfull and you balance is ${this.balance}`)
     }
     this.withdraw=function(amt){
         if(this.balance>amt){
-            this.withdraw-=amt;
+            this.withdraw-=Number(amt);
             console.log(`withdraw succesfull and you balance is ${this.balance}`)
         }else{
             console.log(`insufficient balance`)
@@ -40,5 +40,6 @@ myform.addEventListener("submit",function(e){
     let account1= new bank(no.value,nam.value,typ.value,bal.value,true);
 
     console.log(account1.balance)
+    account1.deposit(22)
 })
 
