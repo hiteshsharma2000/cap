@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>phonepay</title>
+    <style>
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #main {
+            background-color: #64289F;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #amount {
+            width: 100%;
+           
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        #btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #btn:hover {
+            background-color: #0056b3;
+        }
+img{
+    height: 150px;
+    width:90%;
+  background-color: #64289F;
+}#hidden{
+    display:none
+}
+    </style>
+</head>
+<body>
+    <div id="main">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.sUQeCV33SZ7IAdJVqqj15gHaE8&pid=Api&P=0&h=180" alt=""><br><br>
+        <input id="amount" placeholder="amount to be transfer"></input>
+        <br><br><br>
+        <button id="btn" onclick="transfer()"> PAY</button>
+        <br><br>
+        <div id="hidden" ><h2 id="result"></h2>
+        <br><br><img src="https://tse4.explicit.bing.net/th?id=OIP.0-v2-a6VM_nWJQxdCaI8hgHaEH&pid=Api&P=0&h=180" alt=""></div>
+    </div>
+
+  
+    
+    
+</body>
+<script src="./index.js"></script>
+</html>
