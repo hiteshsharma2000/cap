@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mc McDonald's</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            padding: 20px;
+        }
+        .main{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .menu {
+            margin-top: 20px;
+          
+        }
+
+        .food-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .food-item label {
+            margin-left: 10px;
+        }
+
+        .order-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #d91e18;
+            color: #ffffff;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .order-btn:hover {
+            background-color: #c41210;
+        }
+
+        .order-completed {
+            margin-top: 20px;
+            text-align: center;
+            background-color: #dff0d8;
+            padding: 20px;
+            border: 1px solid #d6e9c6;
+        }
+
+        #hidden {
+            display: none;
+        }
+        #momos, #burger ,#fries,#{
+           cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>McDonald’s Virtual Order System</h1>
+        
+        <div class="menu">
+            <h2>Menu</h2>
+            <div class="main">
+            <div class="food-item">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.TX5cvuJgfnEdPcvRUE0TSAHaFU&pid=Api&P=0&h=180" alt="Burger" class="food-image">
+                <input type="checkbox" id="burger" name="burger">
+                <label for="burger">Burger</label>
+            </div>
+            
+            <div class="food-item">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.AkaSPIHzt9EL5hb4j6kOQQHaFj&pid=Api&P=0&h=180" alt="Fries" class="food-image">
+                <input type="checkbox" id="fries" name="fries">
+                <label for="fries">Fries</label>
+            </div>
+
+            <div class="food-item">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.cnqb8G2cd3U-PsgVQISJHQHaJc&pid=Api&P=0&h=180" alt="Coke" class="food-image">
+                <input type="checkbox" id="coke" name="coke">
+                <label for="coke">Coke</label>
+            </div>
+            <div class="food-item">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.hsYaSa6S9XKPBLaxeCDoKAHaFj&pid=Api&P=0&h=180" alt="momo" class="food-image">
+                <input type="checkbox"  id="momos" name="momos">
+                <label for="momos">Momos</label>
+            </div>
+        </div>
+            <!-- ... Add more items as required ... -->
+
+            <button class="order-btn">Order Food</button>
+        </div>
+
+        <div class="order-completed" id="hidden">
+            <h2>Order Completed!</h2>
+            <p>Your order number is: <span id="order-number">12345</span></p>
+        </div>
+    </div>
+</body>
+</html>
+<script src="./index.js"></script>
